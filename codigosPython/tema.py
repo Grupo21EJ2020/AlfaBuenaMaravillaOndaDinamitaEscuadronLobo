@@ -1,3 +1,8 @@
+#########################
+# Daniel Mendoza Perez  #
+#   version 0.2         #
+#########################
+
 def menu():
 
 	print ("Selecciona una opción")
