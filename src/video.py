@@ -37,3 +37,6 @@ class Video:
     def fechaPublicacion(self,valor):
         self.__fechaPublicacion = valor
 
+    def detallesVideo(self):
+        print(f"idVideo: {self.__idVideo}\nNombre: {self.__nombre}\nUrl: {self.__url}\nFecha de Publicacion: {self.__fechaPublicacion}")
+
