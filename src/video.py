@@ -21,3 +21,19 @@ class Video:
     def fechaPublicacion(self):
         return self.__fechaPublicacion
 
+    @idVideo.setter
+    def iidVideo(self,valor):
+        self.__idVideo = valor
+
+    @nombre.setter
+    def nombre(self,valor):
+        self.__nombre = valor
+
+    @url.setter
+    def url(self,valor):
+        self.__url = valor
+    
+    @fechaPublicacion.setter
+    def fechaPublicacion(self,valor):
+        self.__fechaPublicacion = valor
+
