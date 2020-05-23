@@ -22,7 +22,7 @@ class Video:
         return self.__fechaPublicacion
 
     @idVideo.setter
-    def iidVideo(self,valor):
+    def idVideo(self,valor):
         self.__idVideo = valor
 
     @nombre.setter
