@@ -1,57 +1,98 @@
-class Tema:
-     def __init__(self,idTema,Nombre,):
-        self.__idTema = idTema
-        self.__Nombre = Nombre
+#########################
+# Daniel Mendoza Perez  #
+#   version 0.55        #
+#########################
 
-@property
-def idTema(self):
-    return self.__idTema
+import sys
+import os
+import json
 
-@property
-def Nombre(self):
-    return self.__Nombre
 
-@idTema.setter
-def idTema(self,valor):
-    return self.__idTema
+temas=[]
+ruta='arch/data.txt'
 
-@Nombre.setter
-def Nombre(self,valor):
-    return self.__Nombre
 
-def IngresoCant(self):
-    #para hacer lista
-    import json
-    self.__idTemas=[]
+def addTema():
+    if os.path.isfile(ruta):  # ya hay temas registrados
+        tema=input('Tema a agregar? ')
+        with open(ruta) as json_file: temas = json.load(json_file)
+        if tema not in temas:
+            temas.append(tema)
+            with open(ruta, 'w') as outfile: json.dump(temas, outfile)
+        qryTemas()   
+    else:
+        addTemas()
+        qryTemas()   
 
-    n=int(input("Cuales son los ID? "))
+def addTemas():
+    n=int(input('cuantos temas vas a agregar? '))
     for i in range(n):
-       ident=input("ID: ")
-       self.__idTemas.append(ident)
-    print(self.__idTemas) 
+        tema=input('tema {0:02d}: '.format(i+1))
+        temas.append(tema)
+    with open(ruta, 'w') as outfile: json.dump(temas, outfile)
 
-    #para guardar en el archivo
-    with open('archivos/IDtemas.txt', 'w') as outfile: json.dump(self.__idTemas, outfile)
+def qryTemas():
+    try:
+        with open(ruta) as json_file: temas = json.load(json_file)
+        i=1
+        for t in temas:
+            print('tema {0:02d}: {1}'.format(i,t))
+            i = i + 1
+    except:
+        print('Aún no existen temas registrados')
 
-def IngresoNom(self):
-        #para hacer lista
-    import json
-    self.__Nombre=[]
+def rmvTema():
+    qryTemas()
+    tema=input('Tema a eliminar? ')
+    with open(ruta) as json_file: temas = json.load(json_file)
+    try:
+        temas.remove(tema)
+    except:
+        print('El tema {} no está en la lista'.format(tema))
+        rmvTema()
+    with open(ruta, 'w') as outfile: json.dump(temas, outfile)
+    qryTemas()
 
-    n=int(input("cuantos Nombres Ingresaras? "))
-    for i in range(n):
-       tema=input("Ingresa el Nombre segun como ingresaste los ID: ")
-       self.__Nombre.append(tema)
-    print(self.__Nombre) 
+def updTema():
+    qryTemas()
+    tema=input('Tema a modificar? ')
+    nvotema=input('Nuevo tema? ')
+    with open(ruta) as json_file: temas = json.load(json_file)
+    if tema not in temas:
+        print('El tema {} no está en la lista'.format(tema))
+    else:
+        i=0
+        for t in temas:
+            if t.upper()==tema.upper():
+                temas[i]=nvotema
+                with open(ruta, 'w') as outfile: json.dump(temas, outfile)     
+            i = i + 1
+    qryTemas()  
 
-    #para guardar en el archivo
-    with open('archivos/Temas.txt', 'w') as outfile: json.dump(self.__Nombre, outfile)
+def menu():
+    while True:
+        print('Elija una opción: (A, B, C ...)')
+        print('A) Altas')
+        print('B) Bajas')
+        print('C) Consultas') 
+        print('M) Modificaciones')            
+        print('S) Salir')
 
+        choice = input ('Opción a relizar: ')
+        choice = choice.upper()
 
-    
-#combino id con nombre
-#with open('archivo1.txt') as f1, open('archivo2.txt') as f2, open('archivounion.txt', 'w') as of:
-    #line_1 = f1.readlines()[0].strip()
-    #line_2 = f2.readlines()[5].strip()
-    #out_line = "{}, {}".format(line_1[:-1], line_2[1:])
-    #of.write(out_line)
+        if choice == "A":
+            addTema()
+        elif choice == "B":
+            rmvTema()
+        elif choice == "C":
+            qryTemas()
+        elif choice == "M":
+            updTema()
+        elif choice == "S":
+            print("Saliendo del sistema")
+            sys.exit(0)
+        else:
+            print("Opción no válida")
+
+menu()       
