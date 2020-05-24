@@ -28,14 +28,8 @@ class Curso:
     def idEmpleado (self,valor):
         self.__idEmpleado = valor
 
-    def agregarCurso(self):
+    def agregarCurso (self):
         origen = open("./archivos/curso.txt", "a", encoding = "utf8")
-        origen.write = (f"{self.__idCurso} | {self.__descripcion} | {self.__idEmpleado}")
-        origen.close()
-
-    def eliminarCurso():
-
-    def modificarCurso(self):
-
-    def consultarTodoCurso(self):
+        origen.write(f"{self.__idCurso} | {self.__descripcion} | {self.__idEmpleado} \n")
+         origen.close()
 
