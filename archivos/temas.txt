@@ -1,1 +1,1 @@
-["Alfa", "Gamma", "X-ray", "2", "alfa"]
+["Zeta", "Gamma", "X-ray", "2", "Zeta"]
