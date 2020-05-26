@@ -60,3 +60,7 @@ class Video:
         nl = "\n".join(lista)
         archivo.write(nl)
         archivo.close
+    
+def DetallesTodosVideos():
+    archivo = open("archivos/videos.txt")
+    print(archivo.read())
