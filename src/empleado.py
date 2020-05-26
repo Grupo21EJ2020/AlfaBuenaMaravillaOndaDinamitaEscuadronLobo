@@ -4,7 +4,7 @@ class Empleado:
         self.__nombre = nombre
         self.__direccion = direccion 
 
- @property
+    @property
     def idEmpleado(self):
         return self.__idEmpleado
 
