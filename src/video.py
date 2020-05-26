@@ -1,3 +1,5 @@
+from io import open
+import json
 class Video:
     def __init__(self,idVideo,nombre,url,fechaPublicacion):
         self.__idVideo = idVideo
@@ -39,9 +41,37 @@ class Video:
 
     def detallesVideo(self):
         print(f"idVideo: {self.__idVideo}\nNombre: {self.__nombre}\nUrl: {self.__url}\nFecha de Publicacion: {self.__fechaPublicacion}")
+    
    
     def guardarVideo(self):
         info = (f"{self.__idVideo}|{self.__nombre}|{self.__url}|{self.__fechaPublicacion}\n")
-        infotexto = open("./archivos/videos.txt", "a", encoding = "utf8")
-        infotexto.write(info)
-        infotexto.close()
+        archivo = open("archivos/videos.txt","a")
+        archivo.write(info)
+        archivo.close
+    
+    def eliminarVideo(self):
+        lista = []
+        info = (f"{self.__idVideo}|{self.__nombre}|{self.__url}|{self.__fechaPublicacion}\n")
+        archivo = open("archivos/videos.txt","r")
+        for i in archivo:
+            if i not in info:
+                lista.append(i)
+        archivo = open("archivos/videos.txt","w")
+        nl = "\n".join(lista)
+        archivo.write(nl)
+        archivo.close
+
+
+
+    
+v1 = Video("100","DENILSON","GOOGLE.COM","28 MARZO")
+v2 = Video("200","DENILSON","GOOGLE.COM","28 MARZO")
+v3 = Video("300","DENILSON","GOOGLE.COM","28 MARZO")
+
+v3.eliminarVideo()
+
+
+
+
+
+
