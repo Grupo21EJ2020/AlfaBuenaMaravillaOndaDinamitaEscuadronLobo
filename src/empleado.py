@@ -47,7 +47,8 @@ class Empleado:
         print("Nombre del Empleado:\n")
         nombre = input("Nombre: \n")
         print("Direccion del Empleado")
-        direccion = input("Direccion: \n ")
+        print("Direccion del Empleado")
+        direccion = input("> ")
 
-        archivo.write(idEmpleado + "|" + nombre + "|" + direccion)
+        archivo.write(idempleado + "|" + nombre + "|" + direccion)
         archivo.close()
