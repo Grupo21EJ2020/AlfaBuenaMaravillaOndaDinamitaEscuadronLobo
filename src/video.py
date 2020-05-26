@@ -60,18 +60,3 @@ class Video:
         nl = "\n".join(lista)
         archivo.write(nl)
         archivo.close
-
-
-
-    
-v1 = Video("100","DENILSON","GOOGLE.COM","28 MARZO")
-v2 = Video("200","DENILSON","GOOGLE.COM","28 MARZO")
-v3 = Video("300","DENILSON","GOOGLE.COM","28 MARZO")
-
-v3.eliminarVideo()
-
-
-
-
-
-
