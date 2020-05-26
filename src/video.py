@@ -39,4 +39,11 @@ class Video:
 
     def detallesVideo(self):
         print(f"idVideo: {self.__idVideo}\nNombre: {self.__nombre}\nUrl: {self.__url}\nFecha de Publicacion: {self.__fechaPublicacion}")
+   
+    def guardarVideo(self):
+        info = (f"{self.__idVideo}|{self.__nombre}\n")
+        infotexto = open("./archivos/videos.txt", "a", encoding = "utf8")
+        infotexto.write(info)
+        infotexto.close()
+
 
