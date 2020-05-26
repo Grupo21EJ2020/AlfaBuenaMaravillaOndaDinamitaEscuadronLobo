@@ -4,7 +4,7 @@ class Empleado:
         self.__nombre = nombre
         self.__direccion = direccion 
 
-    @property
+    @property  
     def idEmpleado(self):
         return self.__idEmpleado
 
@@ -15,3 +15,15 @@ class Empleado:
     @property
     def direccion(self):
         return self.__direccion
+
+    @idEmpleado.setter
+    def idEmpleado(self,valor):
+        self.__idVideo = valor
+
+    @nombre.setter
+    def nombre(self,valor):
+        self.__nombre = valor
+
+    @direccion.setter
+    def direccion(self,valor):
+        self.__direccion = valor    
