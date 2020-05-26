@@ -6,11 +6,25 @@
 import sys
 import os
 import json
+#temas=[]
 
+ruta='archivos/temas.txt'
 
-temas=[]
-ruta='arch/data.txt'
+class bcolors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    GREN = '\033[92m'
+    YELLOW = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
 
+    def disable(self):
+        self.HEADER = ''
+        self.OKBLUE = ''
+        self.OKGREEN = ''
+        self.WARNING = ''
+        self.FAIL = ''
+        self.ENDC = ''
 
 def addTema():
     if os.path.isfile(ruta):  # ya hay temas registrados
@@ -70,13 +84,14 @@ def updTema():
     qryTemas()  
 
 def menu():
+    os.system('cls')
     while True:
         print('Elija una opción: (A, B, C ...)')
-        print('A) Altas')
-        print('B) Bajas')
-        print('C) Consultas') 
-        print('M) Modificaciones')            
-        print('S) Salir')
+        print(f"A) {bcolors.YELLOW}A{bcolors.ENDC}ltas")
+        print(f"B) {bcolors.YELLOW}B{bcolors.ENDC}ajas")
+        print(f"C) {bcolors.YELLOW}C{bcolors.ENDC}ambios")
+        print(f"M) {bcolors.YELLOW}M{bcolors.ENDC}odificaciones")            
+        print(f"S) {bcolors.YELLOW}S{bcolors.ENDC}alir")
 
         choice = input ('Opción a relizar: ')
         choice = choice.upper()
@@ -95,4 +110,4 @@ def menu():
         else:
             print("Opción no válida")
 
-menu()       
+menu()            
