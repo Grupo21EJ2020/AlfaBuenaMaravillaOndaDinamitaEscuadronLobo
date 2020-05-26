@@ -1,1 +1,1 @@
-["Alfa", "Gamma", "X-ray", "2", "alfa"]
+["Alfa", "Gamma", "X-ray", "alfa", "C:/Users/mpdan/.conda/envs/Extras/python.exe c:/Users/mpdan/Desktop/Progra/AlfaBuenaMaravillaOndaDinamitaEscuadronLobo/src/tema.py"]
