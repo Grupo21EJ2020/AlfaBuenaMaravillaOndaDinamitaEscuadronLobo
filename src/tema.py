@@ -89,7 +89,7 @@ def menu():
         print('Elija una opción: (A, B, C ...)')
         print(f"A) {bcolors.YELLOW}A{bcolors.ENDC}ltas")
         print(f"B) {bcolors.YELLOW}B{bcolors.ENDC}ajas")
-        print(f"C) {bcolors.YELLOW}C{bcolors.ENDC}ambios")
+        print(f"C) {bcolors.YELLOW}C{bcolors.ENDC}onsultas")
         print(f"M) {bcolors.YELLOW}M{bcolors.ENDC}odificaciones")            
         print(f"S) {bcolors.YELLOW}S{bcolors.ENDC}alir")
 
