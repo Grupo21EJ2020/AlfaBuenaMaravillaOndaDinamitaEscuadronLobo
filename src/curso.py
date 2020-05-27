@@ -31,5 +31,35 @@ class Curso:
     def agregarCurso (self):
         origen = open("./archivos/curso.txt", "a", encoding = "utf8")
         origen.write(f"{self.__idCurso} | {self.__descripcion} | {self.__idEmpleado} \n")
-         origen.close()
+        origen.close()
+        
+    def modificarCurso(self,numero,id1,texto,id2):
+        archivo_texto = open("./archivos/curso.txt", "r+")
+        lista_texto = archivo_texto.readlines();
+        numero -= 1
+        lista_texto[numero] = f"{id1} | {texto} | {id2}" 
+        archivo_texto.seek(0)
+        archivo_texto.writelines(lista_texto)
+        archivo_texto.close()
+
+primerID = int(input("Dime el primer id"))
+textoPrincipal = input("Dime el texto que quieres")
+segundoiD = int(input("Dime el segundo id"))
+clase = Curso(primerID, textoPrincipal, segundoiD)
+clase.agregarCurso() 
+
+numero = int(input("Dime que id quieres modificar"))
+id1 = int(input("Dime el primer id a modificar"))
+texto = input("Dime el texxto")
+id2 = int(input("Dime el segundo id a modificar"))
+
+clase.modificarCurso(numero,id1,texto,id2)
+
+
+
+
+
+
+
+
 
