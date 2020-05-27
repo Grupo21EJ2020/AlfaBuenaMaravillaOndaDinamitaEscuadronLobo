@@ -45,7 +45,7 @@ class Curso:
         archivo_texto.writelines(lista_texto)
         archivo_texto.close()
 
-   
+
     def eliminarCurso(self):
         origen = open("./archivos/curso.txt","r",encoding="utf8")
         lines=archivo.readlines()
@@ -59,9 +59,9 @@ class Curso:
         origen.close()
 
     #def leerTodoCurso(self):
-     #   origen = open("./archivos/curso.txt", encoding='utf8')
-      #  print(origen.read())
-       # origen.close()
+    #   origen = open("./archivos/curso.txt", encoding='utf8')
+    #  print(origen.read())
+    # origen.close()
 
 
     def detallesEmpleado(self):
