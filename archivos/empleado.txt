@@ -1,3 +1,2 @@
-1 | Juan | Linda Vista
-2 | Daniel | Casa Blanca
-3 | Danna | Casa Blanca
+11|Danna|Casa
+80|Tere|Casa
