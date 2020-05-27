@@ -1,4 +1,5 @@
 class Empleado:
+<<<<<<< HEAD
      def __init__(self,idEmpleado,Nombre,direccion):
         self.__idEmpleado = idEmpleado
         self.__Nombre = Nombre
@@ -49,6 +50,7 @@ def detallesEmpleado():
 def menu():
     Menu=0
     while Menu!=6:
+
         print("MENU")
         print("1)Agregar Empleado")
         print("2)Eliminar Empleado")
@@ -57,6 +59,7 @@ def menu():
         print("5)Ver detalles de Empleados")
         Menu=int(input("Seleción: "))
 
+<<<<<<< HEAD
         if Menu == 1:
             agregarEmpleado()
         elif Menu == 2:
@@ -69,3 +72,4 @@ def menu():
             detallesEmpleado()
 
 menu()
+

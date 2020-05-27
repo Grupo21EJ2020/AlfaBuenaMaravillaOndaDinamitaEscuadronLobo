@@ -5,7 +5,32 @@ class Curso_Tema:
     self.__idCursoTema = idCursoTema
     self.__idCurso = idCurso
     self.__idTema = idTema
-    def agregar_curso_tema():
+   
+   @property
+   def idCursoTema(self):
+       return self.__idCurso
+    
+    @property
+    def idCurso(self):
+        return self.__idCurso
+    
+    @property 
+    def idTema(self):
+    return self.__idTema
+    
+    @idCursoTema.setter
+    def idCursoTema(self,valor):
+        self.__idCursoTema = valor
+
+    @idCurso.setter
+    def idCurso(self,valor):
+        self.__idCurso = valor
+
+    @idTema.setter
+    def idTema(self,valor):
+        self.__idTema = valor
+    
+     def agregar_curso_tema():
         self.archivo = open("./archivos/curso_tema.txt", "a", enconding= "utf8")
        
         print("Cual es el id del tema del curso?")
