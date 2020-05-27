@@ -46,13 +46,12 @@ class Curso_Tema:
        self.archivo.close()
     
     def consultar_curso_tema(self):
-        self.archivo = open("/archivos/curso_tema.txt", enconding = "utf8")
-        
+        self.archivo = open("/archivos/cursos_temas.txt", enconding = "utf8")
         print(archivo.read())
         self.archivo.close()
     
     def detalle_curso_tema(self):
-        self.archivo = open("./archivos/cursos_temas,enconding = "utf8")
+        self.archivo = open("./archivos/cursos_temas.txt",enconding = "utf8")
         
         print("Dime el id que buscas")
         self.id_buscar = input(">")
