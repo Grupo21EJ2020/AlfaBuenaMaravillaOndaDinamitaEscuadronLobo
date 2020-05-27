@@ -88,8 +88,7 @@ class Video:
         archivo = open("archivos/videos.txt")
         print(archivo.read())
         archivo.close
-    
-
+           
 def DetallesTodosVideos():
     archivo = open("archivos/videos.txt")
     print(archivo.read())
