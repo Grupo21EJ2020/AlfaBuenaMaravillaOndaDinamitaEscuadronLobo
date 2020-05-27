@@ -28,6 +28,9 @@ class Curso:
     def idEmpleado (self,valor):
         self.__idEmpleado = valor
 
+    global lista
+    lista=list()
+
     def agregarCurso (self):
         origen = open("./archivos/curso.txt", "a", encoding = "utf8")
         origen.write(f"{self.__idCurso} | {self.__descripcion} | {self.__idEmpleado} \n")
@@ -41,6 +44,30 @@ class Curso:
         archivo_texto.seek(0)
         archivo_texto.writelines(lista_texto)
         archivo_texto.close()
+
+   
+    def eliminarCurso(self):
+        archivo = open("./archivos/curso.txt","r",encoding="utf8")
+        lines=archivo.readlines()
+        archivo.close()
+        archivo=open("./archivos/curso.txt","w",encoding="utf8")
+        idCurso = input("Ingrese Id de empleado a eliminar: ")
+        for line in lines:
+            id = line.split("|")[0]
+            if idCurso!= id:
+                archivo.write(line)
+        archivo.close()
+
+    
+
+primerID = int(input("Dime el primer id"))
+textoPrincipal = input("Dime el texto que quieres")
+segundoiD = int(input("Dime el segundo id"))
+clase = Curso(primerID, textoPrincipal, segundoiD)
+clase.agregarCurso() 
+clase.eliminarCurso()   
+
+
 
 
 

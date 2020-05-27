@@ -1,3 +1,1 @@
-1 | hola | 2 
-198 | pedroKaz | 1783 | adios | 4 
-5 | pedro | 8 
+2 | adios | 3 
