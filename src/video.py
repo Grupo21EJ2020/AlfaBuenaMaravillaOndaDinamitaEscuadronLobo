@@ -64,7 +64,32 @@ class Video:
         archivo = open("archivos/videos.txt")
         print(archivo.read())
         archivo.close
-                 
+    
+    def modificarVideo(self,nombreObjeto):
+        #el nombre del objeto que desean modificar debe ser el mismo nombre que se usara en la funcion ejemplo
+        # nombreobjeto.("nombreobjeto") dentro de los parentesis debe llevar comillas para que la use como un string
+        lista = []
+        info = (f"{self.__idVideo}|{self.__nombre}|{self.__url}|{self.__fechaPublicacion}\n")
+        archivo = open("archivos/videos.txt","r")
+        for i in archivo:
+            if i not in info:
+                lista.append(i)
+            else:
+                id = input("Ingresa el nuevo id del video: ")
+                nombre = input("Ingresa el nuevo nombre del video: ")
+                url = input("Ingresa el nuevo url del video: ")
+                fecha = input("Ingresa la nueva fecha del video: ")
+                videonuevo = (f"{id}|{nombre}|{url}|{fecha}")
+                lista.append(videonuevo)
+                         
+        archivo = open("archivos/videos.txt","w")
+        nl = "\n".join(lista)
+        archivo.write(nl)
+        archivo = open("archivos/videos.txt")
+        print(archivo.read())
+        archivo.close
+    
+
 def DetallesTodosVideos():
     archivo = open("archivos/videos.txt")
     print(archivo.read())
