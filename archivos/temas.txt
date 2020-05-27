@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ["Alfa", "Gamma", "X-ray", "alfa", "C:/Users/mpdan/.conda/envs/Extras/python.exe c:/Users/mpdan/Desktop/Progra/AlfaBuenaMaravillaOndaDinamitaEscuadronLobo/src/tema.py"]
+=======
+["Zeta", "Gamma", "X-ray", "2", "Zeta"]
+>>>>>>> fae9afe6e8c6221de6364a218d3be6f093edf951
