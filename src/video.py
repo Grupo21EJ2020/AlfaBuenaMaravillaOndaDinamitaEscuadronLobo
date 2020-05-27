@@ -45,7 +45,7 @@ class Video:
    
     def guardarVideo(self):
         info = (f"{self.__idVideo}|{self.__nombre}|{self.__url}|{self.__fechaPublicacion}\n")
-        archivo = open("archivos/videos.txt","a")
+        archivo = open("archivos/videos.txt","a", encoding = "utf8")
         archivo.write(info)
         archivo = open("archivos/videos.txt")
         print(archivo.read())
@@ -54,11 +54,11 @@ class Video:
     def eliminarVideo(self):
         lista = []
         info = (f"{self.__idVideo}|{self.__nombre}|{self.__url}|{self.__fechaPublicacion}\n")
-        archivo = open("archivos/videos.txt","r")
+        archivo = open("archivos/videos.txt","r", encoding = "utf8")
         for i in archivo:
             if i not in info:
                 lista.append(i)
-        archivo = open("archivos/videos.txt","w")
+        archivo = open("archivos/videos.txt","w", encoding = "utf8")
         nl = "\n".join(lista)
         archivo.write(nl)
         archivo = open("archivos/videos.txt")
@@ -70,11 +70,11 @@ class Video:
         # nombreobjeto.("nombreobjeto") dentro de los parentesis debe llevar comillas para que la use como un string
         lista = []
         info = (f"{self.__idVideo}|{self.__nombre}|{self.__url}|{self.__fechaPublicacion}\n")
-        archivo = open("archivos/videos.txt","r")
+        archivo = open("archivos/videos.txt","r", encoding = "utf8")
         for i in archivo:
             if i not in info:
                 lista.append(i)
-            else:
+            elif i == info:
                 id = input("Ingresa el nuevo id del video: ")
                 nombre = input("Ingresa el nuevo nombre del video: ")
                 url = input("Ingresa el nuevo url del video: ")
@@ -82,7 +82,7 @@ class Video:
                 videonuevo = (f"{id}|{nombre}|{url}|{fecha}")
                 lista.append(videonuevo)
                          
-        archivo = open("archivos/videos.txt","w")
+        archivo = open("archivos/videos.txt","w", encoding = "utf8")
         nl = "\n".join(lista)
         archivo.write(nl)
         archivo = open("archivos/videos.txt")
