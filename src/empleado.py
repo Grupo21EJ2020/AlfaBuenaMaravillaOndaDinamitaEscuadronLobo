@@ -1,5 +1,6 @@
+from io import open
+import os
 class Empleado:
-<<<<<<< HEAD
      def __init__(self,idEmpleado,Nombre,direccion):
         self.__idEmpleado = idEmpleado
         self.__Nombre = Nombre
@@ -32,20 +33,64 @@ global lista
 lista=list()
 
 def agregarEmpleado():
-    print("empleado")
+    archivo = open("./archivos/empleado.txt","a",encoding="utf8")
+    idEmpleado=input("Ingrese id: ")
+    Nombre=str(input("Nombre: "))
+    direccion=str(input("Direccion:"))
+    archivo.write(idEmpleado + "|" + Nombre + "|" + direccion + "\n")
+    archivo.close()
 
 def eliminarEmpleado():
-    print("eliminar")
+    archivo = open("./archivos/empleado.txt","r",encoding="utf8")
+    lines=archivo.readlines()
+    archivo.close()
+    archivo=open("./archivos/empleado.txt","w",encoding="utf8")
+    idEmpleado = input("Ingrese Id de empleado a eliminar: ")
+    
+    for line in lines:
+        id = line.split("|")[0]
+        if idEmpleado!= id:
+            archivo.write(line)
+    archivo.close()
+    
 
 def modificarEmpleado():
-    print("modificar")
+    print("Modificacion de parametros: ")
+    archivo = open("./archivos/empleado.txt","r",encoding="utf8")
+    lines=archivo.readlines()
+    archivo.close()
+    archivo=open("./archivos/empleado.txt","w",encoding="utf8")
+    idEmpleado = input("Ingrese Id de empleado a modificar: ")
+    
+    for line in lines:
+        id = line.split("|")[0]
+        if idEmpleado!= id:
+            archivo.write(line)
+        else:
+            print("Ingrese nuevos datos de empleado: ")
+            idEmpleado=input("Ingrese id: ")
+            Nombre=str(input("Nombre: "))
+            direccion=str(input("Direccion:"))
+            archivo.writelines(idEmpleado + "|" + Nombre + "|" + direccion + "\n")
 
-def consultarEmpleado():
-    print("consulta")
+    archivo.close()
+
+def consultarEmpleado(): 
+    archivo = open("./archivos/empleado.txt","r", encoding = "utf8")    
+    print("Datos de Empleados: ")
+    print(archivo.read())
+    archivo.close()
 
 def detallesEmpleado():
-    print("detalles")
-
+    archivo = open("./archivos/empleado.txt","r",encoding="utf8")
+    lines=archivo.readlines()
+    id_detalles = input("Ingrese Id de empleado a para ver detalles: ")
+    
+    for line in lines:
+        id = line.split("|")[0]
+        if id_detalles== id:
+            print(line)
+    archivo.close()
 
 def menu():
     Menu=0
@@ -59,7 +104,6 @@ def menu():
         print("5)Ver detalles de Empleados")
         Menu=int(input("Seleción: "))
 
-<<<<<<< HEAD
         if Menu == 1:
             agregarEmpleado()
         elif Menu == 2:
