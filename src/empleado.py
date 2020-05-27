@@ -1,10 +1,11 @@
 class Empleado:
-     def __init__(self, idEmpleado, nombre, direccion ):
-        self.__idEmpleado= idEmpleado
+    def __init__(self, idEmpleado, nombre, direccion ):
+        self.__idEmpleado = idEmpleado
         self.__nombre = nombre
         self.__direccion = direccion 
 
-    @property  
+
+    @property
     def idEmpleado(self):
         return self.__idEmpleado
 
@@ -30,13 +31,13 @@ class Empleado:
 
     Menu=1
     while Menu != 6:
-          print("MENU")
-          print("1)Agregar Empleado")
-          print("2)Eliminar Empleado")
-          print("3)Modificar Empleado")
-          print("4)Consultar Empleado")
-          print("5)Ver detalles de Empleados")
-          Menu=int(input("Seleción: "))
+        print("MENU")
+        print("1)Agregar Empleado")
+        print("2)Eliminar Empleado")
+        print("3)Modificar Empleado")
+        print("4)Consultar Empleado")
+        print("5)Ver detalles de Empleados")
+        Menu=int(input("Seleción: "))
 
     if Menu == 1:
         print ("Registro de Empleado")
