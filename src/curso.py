@@ -42,18 +42,7 @@ class Curso:
         archivo_texto.writelines(lista_texto)
         archivo_texto.close()
 
-primerID = int(input("Dime el primer id"))
-textoPrincipal = input("Dime el texto que quieres")
-segundoiD = int(input("Dime el segundo id"))
-clase = Curso(primerID, textoPrincipal, segundoiD)
-clase.agregarCurso() 
 
-numero = int(input("Dime que id quieres modificar"))
-id1 = int(input("Dime el primer id a modificar"))
-texto = input("Dime el texxto")
-id2 = int(input("Dime el segundo id a modificar"))
-
-clase.modificarCurso(numero,id1,texto,id2)
 
 
 
