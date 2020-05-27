@@ -47,15 +47,32 @@ class Curso:
 
    
     def eliminarCurso(self):
-        archivo = open("./archivos/curso.txt","r",encoding="utf8")
+        origen = open("./archivos/curso.txt","r",encoding="utf8")
         lines=archivo.readlines()
-        archivo.close()
-        archivo=open("./archivos/curso.txt","w",encoding="utf8")
+        origen.close()
+        origen = open("./archivos/curso.txt","w",encoding="utf8")
         idCurso = input("Ingrese Id de empleado a eliminar: ")
         for line in lines:
             id = line.split("|")[0]
-            if idCurso!= id:
-                archivo.write(line)
+            if idCurso != id:
+                origen.write(line)
+        origen.close()
+
+    #def leerTodoCurso(self):
+     #   origen = open("./archivos/curso.txt", encoding='utf8')
+      #  print(origen.read())
+       # origen.close()
+
+
+    def detallesEmpleado(self):
+        archivo = open("./archivos/curso.txt","r",encoding="utf8")
+        lines=archivo.readlines()
+        id_detalles = input("Ingrese Id de empleado a para ver detalles: ")
+    
+        for line in lines:
+            id = line.split("|")[0]
+            if id_detalles== id:
+                print(line)
         archivo.close()
 
     
@@ -64,8 +81,11 @@ primerID = int(input("Dime el primer id"))
 textoPrincipal = input("Dime el texto que quieres")
 segundoiD = int(input("Dime el segundo id"))
 clase = Curso(primerID, textoPrincipal, segundoiD)
-clase.agregarCurso() 
-clase.eliminarCurso()   
+clase.agregarCurso()
+clase.detallesEmpleado()
+
+
+
 
 
 
