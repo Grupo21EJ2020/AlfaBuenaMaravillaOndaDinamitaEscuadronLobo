@@ -47,6 +47,8 @@ class Video:
         info = (f"{self.__idVideo}|{self.__nombre}|{self.__url}|{self.__fechaPublicacion}\n")
         archivo = open("archivos/videos.txt","a")
         archivo.write(info)
+        archivo = open("archivos/videos.txt")
+        print(archivo.read())
         archivo.close
     
     def eliminarVideo(self):
@@ -59,8 +61,10 @@ class Video:
         archivo = open("archivos/videos.txt","w")
         nl = "\n".join(lista)
         archivo.write(nl)
+        archivo = open("archivos/videos.txt")
+        print(archivo.read())
         archivo.close
-    
+                 
 def DetallesTodosVideos():
     archivo = open("archivos/videos.txt")
     print(archivo.read())
