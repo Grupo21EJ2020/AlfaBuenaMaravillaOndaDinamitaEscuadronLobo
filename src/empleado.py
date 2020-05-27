@@ -1,54 +1,71 @@
 class Empleado:
-     def __init__(self, idEmpleado, nombre, direccion ):
-        self.__idEmpleado= idEmpleado
-        self.__nombre = nombre
-        self.__direccion = direccion 
+     def __init__(self,idEmpleado,Nombre,direccion):
+        self.__idEmpleado = idEmpleado
+        self.__Nombre = Nombre
+        self.__direccion = direccion
 
-    @property  
-    def idEmpleado(self):
-        return self.__idEmpleado
+@property
+def idEmpleado(self):
+    return self.__idEmpleado
 
-    @property
-    def nombre(self):
-        return self.__nombre
+@property
+def Nombre(self):
+    return self.__Nombre
+@property
+def direccion(self):
+    return self.__direccion
 
-    @property
-    def direccion(self):
-        return self.__direccion
+@idEmpleado.setter
+def idEmpleado(self,valor):
+    return self.__idEmpleado
 
-    @idEmpleado.setter
-    def idEmpleado(self,valor):
-        self.__idVideo = valor
+@Nombre.setter
+def Nombre(self,valor):
+    return self.__Nombre
 
-    @nombre.setter
-    def nombre(self,valor):
-        self.__nombre = valor
+@direccion.setter
+def direccion(self,valor):
+    return self.__direccion
 
-    @direccion.setter
-    def direccion(self,valor):
-        self.__direccion = valor
+global lista
+lista=list()
 
-    Menu=1
-    while Menu != 6:
-          print("MENU")
-          print("1)Agregar Empleado")
-          print("2)Eliminar Empleado")
-          print("3)Modificar Empleado")
-          print("4)Consultar Empleado")
-          print("5)Ver detalles de Empleados")
-          Menu=int(input("Seleción: "))
+def agregarEmpleado():
+    print("empleado")
 
-    if Menu == 1:
-        print ("Registro de Empleado")
-        archivo = open("./archivos/empleados.txt","a",encoding="utf8")
+def eliminarEmpleado():
+    print("eliminar")
 
-        print("Clave del Empleado ")
-        idEmpleado = input("Id \n")
-        print("Nombre del Empleado:\n")
-        nombre = input("Nombre: \n")
-        print("Direccion del Empleado")
-        print("Direccion del Empleado")
-        direccion = input("> ")
+def modificarEmpleado():
+    print("modificar")
 
-        archivo.write(idempleado + "|" + nombre + "|" + direccion)
-        archivo.close()
+def consultarEmpleado():
+    print("consulta")
+
+def detallesEmpleado():
+    print("detalles")
+
+
+def menu():
+    Menu=0
+    while Menu!=6:
+        print("MENU")
+        print("1)Agregar Empleado")
+        print("2)Eliminar Empleado")
+        print("3)Modificar Empleado")
+        print("4)Consultar Empleado")
+        print("5)Ver detalles de Empleados")
+        Menu=int(input("Seleción: "))
+
+        if Menu == 1:
+            agregarEmpleado()
+        elif Menu == 2:
+            eliminarEmpleado()
+        elif Menu == 3:
+            modificarEmpleado()
+        elif Menu == 4:
+            consultarEmpleado()
+        elif Menu == 5:
+            detallesEmpleado()
+
+menu()
