@@ -3,6 +3,7 @@ from curso import *
 from curso_tema import * 
 from empleado import *
 from video import *
+from curso_tema_video import *
 
 def menu():
     Menu=0
