@@ -1,27 +1,39 @@
 import os.path 
 import sys  
+
+rutacode = os.path.dirname(sys.argv[0])
+rutacurso = "python " + rutacode + "/curso.py"
+rutacursotema = "python " + rutacode + "/curso_tema.py"
+rutatema = "python " + rutacode + "/tema.py"
+rutaempleado = "python " + rutacode + "/empleado.py"
+rutavideo = "python " + rutacode + "/video.py"
+rutactm = "python " + rutacode + "/curso_tema_video.py"
+
 while True:
     print("seleccione una opcion")
     print("A) Curso")
     print("B) Curso tema")
     print("C) Empleado")
     print("D) Tema")
-    print("E) Video")          
+    print("E) Video")
+    print("F) CursoTemaVideo")          
 
     choice = input ('Opción a relizar: ')
     choice = choice.upper()
 
     if choice == "A":
-        execfile(os.path.join( os.path.dirname(sys.argv[0]), 'curso.py'))
+        os.system(rutacurso)
     elif choice == "B":
-        execfile(os.path.join( os.path.dirname(sys.argv[0]), 'curso_tema.py'))
+        os.system(rutacursotema)
     elif choice == "C":
-        execfile(os.path.join( os.path.dirname(sys.argv[0]), 'empleado.py'))
+        os.system(rutaempleado)
     elif choice == "D": 
-        execfile(os.path.join( os.path.dirname(sys.argv[0]), 'tema.py'))
+        os.system(rutatema)
     elif choice == "E": 
-        execfile(os.path.join( os.path.dirname(sys.argv[0]), 'video.py'))
+        os.system(rutavideo)
+    elif choice == "F":
+        os.system(rutactm)
     else:
         print("Opción no válida")
 
-    menu()
+menu()
