@@ -125,7 +125,7 @@ class Curso:
 
             else:
                 print("Ha escogido un numero erroneo\m")
-                menu()
+    menuCurso()
 
 
 
