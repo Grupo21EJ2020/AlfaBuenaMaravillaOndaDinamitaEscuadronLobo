@@ -33,7 +33,7 @@ global lista
 lista=list()
 
 def agregar_idCursoTV():
-    archivo = open("./archivos/Curso_Tema_Video.txt","a",encoding="utf8")
+    archivo = open("./archivos/curso_tema_video.txt","a",encoding="utf8")
     idCursoTV=input("Ingrese id del Video del Tema de Curso: ")
     idCT=str(input("id Curso de Tema: "))
     idVideo=str(input("id Video:"))
@@ -41,10 +41,10 @@ def agregar_idCursoTV():
     archivo.close()
 
 def eliminar_idCursoTV():
-    archivo = open("./archivos/Curso_Tema_Video.txt","r",encoding="utf8")
+    archivo = open("./archivos/curso_tema_video.txt","r",encoding="utf8")
     lines=archivo.readlines()
     archivo.close()
-    archivo=open("./archivos/Curso_Tema_Video.txt","w",encoding="utf8")
+    archivo=open("./archivos/curso_tema_video.txt","w",encoding="utf8")
     idCursoTV = input("Ingrese Id de Video del Tema de Curso a eliminar: ")
     
     for line in lines:
@@ -55,7 +55,7 @@ def eliminar_idCursoTV():
     
 
 def modificar_idCursoTV(self):
-    self.archivo = open("./archivos/Curso_Tema_Video.txt", "r", enconding = "utf8")
+    self.archivo = open("./archivos/curso_tema_video.txt", "r", enconding = "utf8")
     self.archivo_temp = open("./archivos/Curso_Tema_Video_temp.txt", "w", enconding = "utf8")
 
     print("Que id quieres modificar?: ")
@@ -84,7 +84,7 @@ def consultar_idCursoTV(self):
     print(archivo.read())
     self.archivo.close()
 
- def detalle_idCursoTV(self):
+def detalle_idCursoTV(self):
      self.archivo = open("./archivos/curso_tema_video.txt",enconding = "utf8")
         
      print("Dime el id que buscas")
