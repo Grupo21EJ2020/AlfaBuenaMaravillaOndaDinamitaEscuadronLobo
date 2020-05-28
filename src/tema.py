@@ -2,6 +2,9 @@
 # Daniel Mendoza Perez  #
 #   version 0.55        #
 #########################
+class Tema:
+    def __init__(self,idTema):
+        self.__idTema =idTema
 
 import sys
 import os
