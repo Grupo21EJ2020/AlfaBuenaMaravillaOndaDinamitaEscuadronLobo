@@ -43,6 +43,7 @@ class Curso_Tema:
         self.idTema = input("es")
         self.archivo.write(idcursotema + "|" + idcurso + "|" + idtema)
         self.archivo.close()
+
     
     def consultar_curso_tema(self):
         self.archivo = open("./archivos/curso_tema.txt", enconding = "utf8")
@@ -70,7 +71,7 @@ class Curso_Tema:
         print("Que id quieres modificar?: ")
         self.id_mod = input("> ")
         print("Crea un nuevo id para el tema del curso: ")
-        self.id_mod = input("> ")
+        self.id_curso = input("> ")
         print("Crea un nuevo id para curso: ")
         self.idcursoTema = input("> ")
         print("Crea un nuevo id para el tema")
@@ -103,8 +104,8 @@ class Curso_Tema:
         os.remove("./archivos/curso_tema.txt")
         os.rename("./archivos/curso_tema_temp.txt","./archivos/curso_tema.txt")
 
-A = Curso_Tema(0,0,0)
-A.borrar_curso_tema()
+Curso_Tema()
+
 
 
 
