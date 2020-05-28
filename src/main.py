@@ -3,7 +3,10 @@ from curso import Curso
 from curso_tema import Curso_Tema
 from empleado import Empleado
 from video import Video
-while opcion == 1 and opcion == 2 and opcion == 3 and opcion == 4 and opcion == 5 and opcion ==6 and opcion ==7:
+
+def menu():
+    Menu=0
+    while Menu!=7:
     print("*** Bienvenido al programa para Empezar alamcenar tu informacion, acorde a lo que nos indiques")
     print(" *** MENU DEL CURSO ***") 
     print("1.- Menu del Curso")
