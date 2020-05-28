@@ -78,7 +78,7 @@ class Curso:
                 print(f"Este es el curso que escogio: {line}")
         archivo.close()
 
-    def Menu():
+    def menuCurso():
         while True:
             print(" *** MENU DEL CURSO *** ")
             print("1.- Agregar Curso")
