@@ -69,8 +69,8 @@ def modificar_idCursoTV():
         else:
             print("Ingrese nuevos datos de Video del Tema de Curso: ")
             idCursoTV=input("Ingrese id: ")
-            idCT=int(input("ID Curso del Tema: "))
-            idVideo=int(input("ID Video:"))
+            idCT=str(input("ID Curso del Tema: "))
+            idVideo=str(input("ID Video:"))
             archivo.writelines(idCursoTV + "|" + idCT + "|" + idVideo + "\n")
 
     archivo.close()
