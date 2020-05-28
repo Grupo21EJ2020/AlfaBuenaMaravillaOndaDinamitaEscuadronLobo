@@ -6,6 +6,14 @@ class Tema:
     def __init__(self,idTema):
         self.__idTema =idTema
 
+@property
+def idTema(self):
+    return self.__idTema
+
+@idTema.setter
+def idTema(self,nombre):
+    return self.__idTema
+
 import sys
 import os
 import json
