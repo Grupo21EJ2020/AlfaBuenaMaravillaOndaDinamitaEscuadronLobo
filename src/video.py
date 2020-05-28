@@ -1,3 +1,6 @@
+from io import open
+import os
+import json
 class Video:
     def __init__(self,idVideo,nombre,url,fechaPublicacion):
         self.__idVideo = idVideo

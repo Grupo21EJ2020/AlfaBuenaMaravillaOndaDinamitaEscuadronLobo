@@ -1,14 +1,25 @@
 #########################
 # Daniel Mendoza Perez  #
-#   version 0.85        #
+#   version 0.55        #
 #########################
+class Tema:
+    def __init__(self,idTema):
+        self.__idTema =idTema
+
+@property
+def idTema(self):
+    return self.__idTema
+
+@idTema.setter
+def idTema(self,nombre):
+    return self.__idTema
 
 import sys
 import os
 import json
-#temas=[]
+temas=[]
+ruta='archivos/tema.txt'
 
-ruta='archivos/temas.txt'
 
 class bcolors:
     HEADER = '\033[95m'
@@ -60,7 +71,14 @@ def rmvTema():
     tema=input('Tema a eliminar? ')
     with open(ruta) as json_file: temas = json.load(json_file)
     try:
-        temas.remove(tema)
+        uTemas = [x.upper() for x in temas]  #lista de paso a mayúsculas
+        indT =0
+        for ut in uTemas:
+            uTema = tema.upper()
+            if ut==uTema:                
+                break
+            indT = indT +1
+        temas.remove(temas[indT])
     except:
         print('El tema {} no está en la lista'.format(tema))
         rmvTema()
