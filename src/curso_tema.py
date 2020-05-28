@@ -105,12 +105,3 @@ class Curso_Tema:
         os.rename("./archivos/curso_tema_temp.txt","./archivos/curso_tema.txt")
 
 Curso_Tema()
-
-
-
-
-
-
-
-    
-
