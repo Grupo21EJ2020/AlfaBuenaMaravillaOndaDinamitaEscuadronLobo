@@ -1,5 +1,4 @@
-
-from tema import menu
+from curso import Curso
 
 
 while True:
@@ -13,16 +12,16 @@ while True:
     choice = input ('Opción a relizar: ')
     choice = choice.upper()
 
-if choice == "A":
-        print("ya fue")
-elif choice == "B":
-        print("tango")
-elif choice == "T":
-        tema.menu()
-elif choice == "S":
-    print("Saliendo del sistema")
-    sys.exit(0)
-else:
-    print("Opción no válida")
+    if choice == "A":
+            Curso.menu
+    elif choice == "B":
+            print("tango")
+    elif choice == "T": 
+        execfile('tema.py')
+    elif choice == "S":
+        print("Saliendo del sistema")
+        sys.exit(0)
+    else:
+        print("Opción no válida")
 
 menu()            
