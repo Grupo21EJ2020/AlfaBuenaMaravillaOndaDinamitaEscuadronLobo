@@ -31,53 +31,6 @@ class Curso:
     global lista
     lista=list()
 
-    def agregarCurso (self):
-        origen = open("./archivos/curso.txt", "a", encoding = "utf8")
-        origen.write(f"{self.__idCurso}|{self.__descripcion}|{self.__idEmpleado} \n")
-        print("!!! USTED ACABA DE AÑADIR UN CURSO, PUEDE IR A CHECARLO !!!")
-        origen.close()
-        
-    def modificarCurso(self,numero,id1,texto,id2):
-        archivo_texto = open("./archivos/curso.txt", "r+")
-        lista_texto = archivo_texto.readlines();
-        numero -= 1
-        lista_texto[numero] = f"{id1}|{texto}|{id2}" 
-        archivo_texto.seek(0)
-        archivo_texto.writelines(lista_texto)
-        print("!!! USTED ACABA DE MODIFICAR UN CURSO, PUEDE IR A CHECARLO !!!")
-        archivo_texto.close()
-
-
-    def eliminarCurso(self):
-        origen = open("./archivos/curso.txt","r",encoding="utf8")
-        lines = origen.readlines()
-        origen.close()
-        origen = open("./archivos/curso.txt","w",encoding="utf8")
-        idCurso = input("Ingrese id del Curso a eliminar: ")
-        for line in lines:
-            id = line.split("|")[0]
-            if idCurso != id:
-                origen.write(line)
-                print("!!! USTED ACABA DE ELIMINAR EL CURSO, PUEDE IR A CHECARLO !!!")
-        origen.close()
-
-    def leerTodoCurso(self):
-       origen = open("./archivos/curso.txt", encoding='utf8')
-       print(f"Estos son todos los cursos que tiene:{origen.read()}")
-       origen.close()
-
-
-    def leeDetallesCurso(self):
-        archivo = open("./archivos/curso.txt","r",encoding="utf8")
-        lines = archivo.readlines()
-        id_detalles = input("Ingrese iD del curso a para ver ese en especifico: ")
-    
-        for line in lines:
-            id = line.split("|")[0]
-            if id_detalles == id:
-                print(f"Este es el curso que escogio: {line}")
-        archivo.close()
-
     def Menu():
         while True:
             print(" *** MENU DEL CURSO *** ")
@@ -126,7 +79,55 @@ class Curso:
             else:
                 print("Ha escogido un numero erroneo\m")
 
-Curso.Menu()
+    def agregarCurso (self):
+        origen = open("./archivos/curso.txt", "a", encoding = "utf8")
+        origen.write(f"{self.__idCurso}|{self.__descripcion}|{self.__idEmpleado} \n")
+        print("!!! USTED ACABA DE AÑADIR UN CURSO, PUEDE IR A CHECARLO !!!")
+        origen.close()
+        
+    def modificarCurso(self,numero,id1,texto,id2):
+        archivo_texto = open("./archivos/curso.txt", "r+")
+        lista_texto = archivo_texto.readlines();
+        numero -= 1
+        lista_texto[numero] = f"{id1}|{texto}|{id2}" 
+        archivo_texto.seek(0)
+        archivo_texto.writelines(lista_texto)
+        print("!!! USTED ACABA DE MODIFICAR UN CURSO, PUEDE IR A CHECARLO !!!")
+        archivo_texto.close()
+
+
+    def eliminarCurso(self):
+        origen = open("./archivos/curso.txt","r",encoding="utf8")
+        lines = origen.readlines()
+        origen.close()
+        origen = open("./archivos/curso.txt","w",encoding="utf8")
+        idCurso = input("Ingrese id del Curso a eliminar: ")
+        for line in lines:
+            id = line.split("|")[0]
+            if idCurso != id:
+                origen.write(line)
+                print("!!! USTED ACABA DE ELIMINAR EL CURSO, PUEDE IR A CHECARLO !!!")
+        origen.close()
+
+    def leerTodoCurso(self):
+       origen = open("./archivos/curso.txt", encoding='utf8')
+       print(f"Estos son todos los cursos que tiene:{origen.read()}")
+       origen.close()
+
+
+    def leeDetallesCurso(self):
+        archivo = open("./archivos/curso.txt","r",encoding="utf8")
+        lines = archivo.readlines()
+        id_detalles = input("Ingrese iD del curso a para ver ese en especifico: ")
+    
+        for line in lines:
+            id = line.split("|")[0]
+            if id_detalles == id:
+                print(f"Este es el curso que escogio: {line}")
+        archivo.close()
+
+    
+
 
 
 
