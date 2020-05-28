@@ -30,13 +30,13 @@ class Curso_Tema:
     def idTema(self,valor):
         self.__idTema = valor
     
-   global lista
+    global lista
 lista=list()
 
 def agregar_curso_tema():
     archivo = open("./archivos/curso_tema.txt","a",encoding="utf8")
     idCursoTema=input("Ingrese el id del curso del tema: ")
-    idCurso=input("Ingrese el id del Curso: "))
+    idCurso=input("Ingrese el id del Curso: ")
     idTema= input("Ingrese el id del tema: ")
     archivo.write(idCursoTema + "|" + idCurso + "|" + idTema + "\n")
     archivo.close()
@@ -117,19 +117,3 @@ def menu():
             detalles_curso_empleado()
 
 menu()
-
-
-
-<<<<<<< HEAD
-Curso_Tema()
-=======
-
-
-
-
-
-
-
-    
-
->>>>>>> 152ad59b3802b4d8823086a62fd1c5d16e94639d
