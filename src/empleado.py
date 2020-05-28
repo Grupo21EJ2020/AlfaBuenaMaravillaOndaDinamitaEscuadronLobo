@@ -116,4 +116,3 @@ def menu():
             detallesEmpleado()
 
 menu()
-
