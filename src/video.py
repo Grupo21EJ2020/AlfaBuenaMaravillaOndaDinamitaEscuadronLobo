@@ -42,7 +42,6 @@ class Video:
     def detallesVideo(self):
         print(f"idVideo: {self.__idVideo}\nNombre: {self.__nombre}\nUrl: {self.__url}\nFecha de Publicacion: {self.__fechaPublicacion}")
     
-   
     def guardarVideo(self):
         info = (f"{self.__idVideo}|{self.__nombre}|{self.__url}|{self.__fechaPublicacion}\n")
         archivo = open("archivos/videos.txt","a")
@@ -81,14 +80,14 @@ class Video:
                 fecha = input("Ingresa la nueva fecha del video: ")
                 videonuevo = (f"{id}|{nombre}|{url}|{fecha}")
                 lista.append(videonuevo)
-                         
+                    
         archivo = open("archivos/videos.txt","w")
         nl = "\n".join(lista)
         archivo.write(nl)
         archivo = open("archivos/videos.txt")
         print(archivo.read())
         archivo.close
-           
+        
 def DetallesTodosVideos():
     archivo = open("archivos/videos.txt")
     print(archivo.read())
