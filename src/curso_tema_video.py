@@ -54,49 +54,43 @@ def eliminar_idCursoTV():
     archivo.close()
     
 
-def modificar_idCursoTV(self):
-    self.archivo = open("./archivos/curso_tema_video.txt", "r", enconding = "utf8")
-    self.archivo_temp = open("./archivos/Curso_Tema_Video_temp.txt", "w", enconding = "utf8")
+def modificar_idCursoTV():
+    print("Modificacion de parametros: ")
+    archivo = open("./archivos/curso_tema_video.txt","r",encoding="utf8")
+    lines=archivo.readlines()
+    archivo.close()
+    archivo=open("./archivos/curso_tema_video.txt","w",encoding="utf8")
+    idCursoTV = input("Ingrese Id de Video del Tema de Curso a modificar: ")
+    
+    for line in lines:
+        id = line.split("|")[0]
+        if idCursoTV!= id:
+            archivo.write(line)
+        else:
+            print("Ingrese nuevos datos de Video del Tema de Curso: ")
+            idCursoTV=input("Ingrese id: ")
+            idCT=int(input("ID Curso del Tema: "))
+            idVideo=int(input("ID Video:"))
+            archivo.writelines(idCursoTV + "|" + idCT + "|" + idVideo + "\n")
 
-    print("Que id quieres modificar?: ")
-    self.id_mod = input("> ")
-    print("Crea un nuevo id para el Video del Tema de Curso: ")
-    self.id_mod = input("> ")
-    print("Crea un nuevo id para Curso de Tema: ")
-    self.idCT = input("> ")
-    print("Crea un nuevo id para el Video")
-    self.idVideo = input("> ")
-
-    for renglon in self.archivo:
-        id = renglon.split("|") [0]
-        if self.id_mod != id:
-            self.archivo_temp.write(renglon)
-        elif self.id_mod == id:
-            self.archivo_temp.write(self.idCursoTV + "|" + self.idCT + "|" + self.idVideo + "\n")
-    self.archivo.close()
-    self.archivo_temp.close()
-    os.remove("./archivo/curso_tema_video.txt")
-    os.rename("./archivos/curso_tema_video_temp.txt", "./archivos/curso_tema_video.txt")
+    archivo.close()
     
 
-def consultar_idCursoTV(self):
-    self.archivo = open("./archivos/curso_tema_video.txt", enconding = "utf8")
+def consultar_idCursoTV():
+    archivo = open("./archivos/curso_tema_video.txt", encoding = "utf8")
     print(archivo.read())
-    self.archivo.close()
+    archivo.close()
 
-def detalle_idCursoTV(self):
-     self.archivo = open("./archivos/curso_tema_video.txt",enconding = "utf8")
-        
-     print("Dime el id que buscas")
-     self.id_buscar = input(">")
-
-     for renglon in self.archivo:
-        id = renglon.split("|") [0]
-        if self.id_buscar == id:
-           print(renglon)
-           break
-
-        self.archivo.close()
+def detalle_idCursoTV():
+    archivo = open("./archivos/curso_tema_video.txt",encoding = "utf8")
+    lines=archivo.readlines()
+    id_detalles = input("Ingrese Id de Video del Curso de Tema a para ver detalles: ")
+    
+    for line in lines:
+        id = line.split("|")[0]
+        if id_detalles== id:
+            print(line)
+    archivo.close()
 
 def menu():
     Menu=0
