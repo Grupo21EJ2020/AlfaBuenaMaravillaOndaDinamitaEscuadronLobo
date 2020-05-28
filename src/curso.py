@@ -34,6 +34,7 @@ class Curso:
     def agregarCurso (self):
         origen = open("./archivos/curso.txt", "a", encoding = "utf8")
         origen.write(f"{self.__idCurso}|{self.__descripcion}|{self.__idEmpleado} \n")
+        print("!!! USTED ACABA DE AÑADIR UN CURSO, PUEDE IR A CHECARLO !!!")
         origen.close()
         
     def modificarCurso(self,numero,id1,texto,id2):
@@ -43,6 +44,7 @@ class Curso:
         lista_texto[numero] = f"{id1}|{texto}|{id2}" 
         archivo_texto.seek(0)
         archivo_texto.writelines(lista_texto)
+        print("!!! USTED ACABA DE MODIFICAR UN CURSO, PUEDE IR A CHECARLO !!!")
         archivo_texto.close()
 
 
@@ -51,16 +53,17 @@ class Curso:
         lines = origen.readlines()
         origen.close()
         origen = open("./archivos/curso.txt","w",encoding="utf8")
-        idCurso = input("Ingrese Id de empleado a eliminar: ")
+        idCurso = input("Ingrese id del Curso a eliminar: ")
         for line in lines:
             id = line.split("|")[0]
             if idCurso != id:
                 origen.write(line)
+                print("!!! USTED ACABA DE ELIMINAR EL CURSO, PUEDE IR A CHECARLO !!!")
         origen.close()
 
     def leerTodoCurso(self):
        origen = open("./archivos/curso.txt", encoding='utf8')
-       print(origen.read())
+       print(f"Estos son todos los cursos que tiene:{origen.read()}")
        origen.close()
 
 
@@ -72,7 +75,7 @@ class Curso:
         for line in lines:
             id = line.split("|")[0]
             if id_detalles == id:
-                print(line)
+                print(f"Este es el curso que escogio: {line}")
         archivo.close()
 
     def Menu():
@@ -91,33 +94,37 @@ class Curso:
             clase = Curso(primerID,textoPrincipal,segundoiD)
             
             if Menu == 1:
-                primerID = int(input("Dime el primer id"))
-                textoPrincipal = input("Dime el texto que quieres")
-                segundoiD = int(input("Dime el segundo id"))
+                primerID = int(input("Dime el id del Curso: "))
+                textoPrincipal = input("Dime el texto que quieres:")
+                segundoiD = int(input("Dime el id del Empleado: "))
                 clase = Curso(primerID, textoPrincipal, segundoiD)
                 clase.agregarCurso()
+                print("\n")
             
             elif Menu == 2:
                 clase.eliminarCurso()
-            
+                print("\n")
             elif Menu == 3:
                 numero = int(input("Dime el id del que quieres modificar: "))
                 idAModificar = int(input("Dime el id que quieres poner: "))
                 textoAModificar = input("Dime el nombre del curso: ")
                 idAModificarEmpleado = int(input("Dime el id del Empleado: "))
                 clase.modificarCurso(numero,idAModificar,textoAModificar, idAModificarEmpleado)
+                print("\n")
                 
             elif Menu == 4:
-                Curso.leerTodoCurso()
+                clase.leerTodoCurso()
+                print("\n")
             
             elif Menu == 5:
-                Curso.leeDetallesCurso()
+                clase.leeDetallesCurso()
+                print("\n")
 
             elif Menu == 6:
                 break
 
             else:
-                print("Ha escogido un numero erroneo")
+                print("Ha escogido un numero erroneo\m")
 
 Curso.Menu()
 
