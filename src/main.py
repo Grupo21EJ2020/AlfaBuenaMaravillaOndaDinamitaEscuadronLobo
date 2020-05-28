@@ -1,23 +1,39 @@
-#ESTE SERA EL MAIN DEL PROGRAMA
-from curso import *
-from curso_tema import * 
-from empleado import *
-from video import *
-from curso_tema_video import *
+import os.path 
+import sys  
 
-def menu():
-    Menu=0
-    while Menu!=7:
-        print("*** Bienvenido al programa para Empezar alamcenar tu informacion, acorde a lo que nos indiques")
-        print(" *** MENU DEL CURSO ***") 
-        print("1.- Menu del Curso")
-        print("2.- Menu del empleado")
-        print("3.- Menu del video")
-        print("4.- Menu del Tema")
-        print("5.- Menu del Curso_Tema")
-        print("6.- Menu del Curso_Tema_Video")
-        print("7.- Salir")
-        opcion = int(input("> "))
-        
-        if opcion == 1:
-            Curso.menuCurso()
+rutacode = os.path.dirname(sys.argv[0])
+rutacurso = "python " + rutacode + "/curso.py"
+rutacursotema = "python " + rutacode + "/curso_tema.py"
+rutatema = "python " + rutacode + "/tema.py"
+rutaempleado = "python " + rutacode + "/empleado.py"
+rutavideo = "python " + rutacode + "/video.py"
+rutactm = "python " + rutacode + "/curso_tema_video.py"
+
+while True:
+    print("seleccione una opcion")
+    print("A) Curso")
+    print("B) Curso tema")
+    print("C) Empleado")
+    print("D) Tema")
+    print("E) Video")
+    print("F) CursoTemaVideo")          
+
+    choice = input ('Opción a relizar: ')
+    choice = choice.upper()
+
+    if choice == "A":
+        os.system(rutacurso)
+    elif choice == "B":
+        os.system(rutacursotema)
+    elif choice == "C":
+        os.system(rutaempleado)
+    elif choice == "D": 
+        os.system(rutatema)
+    elif choice == "E": 
+        os.system(rutavideo)
+    elif choice == "F":
+        os.system(rutactm)
+    else:
+        print("Opción no válida")
+
+menu()
